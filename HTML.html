@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    #sobre {
+      width: 200px;
+      margin: 20px auto;
+    }
+    #texto {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+    #texto2 {
+      display: none;
+      font-size: 18px;
+      margin: 20px 0;
+    }
+    #button2 {
+      display: none;
+      margin: 0 auto;
+    }
+    #tarta {
+      display: none;
+      margin: 0 auto;
+    }
+    #imagenes {
+      display: none;
+      margin-top: 20px;
+    }
+    .imagen {
+      width: 400px;
+      margin: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Imagen del sobre -->
+  <img id="sobre" src="images/sobre.png" alt="Sobre">
+  
+  <!-- Texto inicial -->
+  <div id="texto">¡Haz clic en el botón para abrir el sobre!</div>
+  
+  <!-- Botón para abrir el sobre -->
+  <button onclick="mostrarImagenes()">Abrir sobre</button>
+  
+  <!-- Contenedor de imágenes -->
+  <div id="imagenes">
+    <img class="imagen" src="images/zory.jpeg" alt="Imagen 1">
+    <img class="imagen" src="images/zory.jpeg" alt="Imagen 2">
+    <img class="imagen" src="images/zory.jpeg" alt="Imagen 3">
+    <img class="imagen" src="images/zory.jpeg" alt="Imagen 4">
+  </div>
+  
+  <!-- Texto que aparece después de abrir el sobre -->
+  <div id="texto2">FELICIDADES SALVADOR</div>
+  <img class="imagen" src="images/tarta.gif" alt="Imagen 5" id="tarta">
+  <!-- Botón para cerrar el sobre -->
+  <button id="button2" onclick="cerrarImagenes()">Cerrar sobre</button>
+  
+  <!-- Elemento de audio -->
+  <audio id="audio" src="audio/audio.mp3"></audio>
+  
+  <script>
+    function mostrarImagenes() {
+      // Mostrar elementos
+      document.getElementById("imagenes").style.display = "block";
+      document.getElementById("texto2").style.display = "block";
+      document.getElementById("button2").style.display = "block";
+      document.getElementById("tarta").style.display = "block";
+      document.body.style.backgroundImage = "url('images/fondo.gif')"; // Cambia la ruta de la imagen de fondo
+      // Reproducir audio
+      const audio = document.getElementById("audio");
+      audio.currentTime = 0;
+      audio.play();
+    }
+
+    function cerrarImagenes() {
+      // Ocultar elementos
+      document.getElementById("imagenes").style.display = "none";
+      document.getElementById("texto2").style.display = "none";
+      document.getElementById("button2").style.display = "none";
+      document.getElementById("tarta").style.display = "none";
+      document.body.style.backgroundImage = "none"; // Elimina la imagen de fondo
+    }
+  </script>
+</body>
+</html>
